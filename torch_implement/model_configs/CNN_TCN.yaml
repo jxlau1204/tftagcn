@@ -1,0 +1,18 @@
+model:
+  cnn: 
+    in_channel: 1
+    hidden_channel: [32, 32]
+    out_size: 1024
+    dropout: 0.1 
+  tcn:
+    attention: true # true: tacn, false: tcn
+    num_channels: 
+      - 256
+      - 128
+      - 64
+    kernel_size: 6
+    dropout: 0.2
+    adaptive_size: 10
+  classify:
+    hidden_size: 128
+    dropout: 0.2

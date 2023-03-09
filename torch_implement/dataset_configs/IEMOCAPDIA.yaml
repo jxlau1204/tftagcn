@@ -1,0 +1,13 @@
+dataset:
+  classes_name: ["N", "A", "H", "S"]
+  train_path: data/iemocap_vad/spectrograms/cross_flod1/train.pkl
+  valid_path: data/iemocap_vad/spectrograms/cross_flod1/valid.pkl 
+  pretrain_path: data/iemocap_vad/spectrograms/cross_flod1/finetune.mat # size = 512
+  batch_time: 182 # >181.2
+model:
+  classes_name: ["N", "A", "H", "S"]
+  # pretrain_size: 128
+  pretrain_size: 512
+  image_size: 
+    - 32
+    - 128

@@ -1,0 +1,40 @@
+model:
+  tfcnn: 
+    in_channel: 1
+    hidden_channel: 32
+    dropout: 0.1 
+    out_size: 256
+  tfcap:
+    in_channel: 1
+    hidden_channel: 
+      - 32
+      - 32
+    out_capsules_dims: 
+      - 8
+      - 8
+    out_capsules_num: 8
+    num_iterations: 3
+    out_size: 128
+    dropout: 0.5
+  tcn: 
+    attention: true  # if true, tacn
+    num_channels: 
+      - 128
+      - 64
+      - 64
+    kernel_size: 6
+    dropout: 0.2
+    adaptive_size: 10
+  pretrain_size: 128
+  diagcn:
+    hidden_size: 32
+    num_layers: 2
+    dropout: 0.2
+    type: gcn
+    to_future_link: 4
+    to_past_link: 4
+  classify:
+    hidden_size: 128
+    n_classes: 4
+dataset:
+  load_pretrain: true

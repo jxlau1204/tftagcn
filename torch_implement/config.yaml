@@ -1,0 +1,59 @@
+model:
+  # name: CNN_LSTM
+  # name: CNN_TCN
+  # name: TFCNN_LSTM
+  # name: TFCNN_TCN
+  # name: TFCAP_LSTM
+  # name: TFCAP_TCN
+  # name: TFCNCAP_LSTM
+  # name: TFCNCAP_TCN
+  # name: TFCNCAP_CIRC_LSTM
+  # name: TFCNCAP_CIRC_TCN
+  # name: TFCNCAP_BUTTLE_LSTM
+  # name: TFCNCAP_BUTTLE_TCN
+  name: TF_BLGCN
+  # name: TF_BLGCN_CIRC
+  # name: TF_BLGCN_BUTTLE
+  # name: TF_TAGCN_CIRC
+  # name: TF_TAGCN_BUTTLE
+exp_mode: train
+
+dataset:
+  # name: IEMOCAP
+  name: IEMOCAPDIA
+  # name: MELD
+  # name: MELDDIA
+
+
+optimizer:
+  learning_rate: 0.001
+  type: Adam
+  weight_decay: 0.00001
+seed: 100
+trainer:
+  gpus: [1]
+  # - 2
+  log_every_n_steps: 100
+  max_epochs: 1000
+  precision: 32
+
+earlystop:
+  monitor: val_loss
+  check_on_train_epoch_end: false
+  patience: 10000
+  mode: min
+
+checkpoints:
+  filename: '{epoch}-{val_loss:.5f}-{val_accuracy:.5f}'
+  monitor: val_accuracy
+  save_last: true
+  save_on_train_epoch_end: false
+  save_top_k: 10
+  mode: max
+data_loader:
+  batch_size: 256
+  num_workers: 10
+
+lr_scheduler:
+  active: false
+  decay_rate: 0.99

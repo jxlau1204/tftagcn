@@ -1,0 +1,18 @@
+model:
+  tfcnn: 
+    in_channel: 1
+    dropout: 0.2 
+    out_size: 512
+  tcn:
+    attention: true
+    num_channels: 
+      - 256
+      - 128
+      - 128
+    kernel_size: 6
+    dropout: 0.2
+    adaptive_size: 10
+  classify:
+    hidden_size: 64
+    dropout: 0.1
+    n_classes: 4

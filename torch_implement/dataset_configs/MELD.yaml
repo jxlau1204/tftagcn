@@ -1,0 +1,11 @@
+dataset:
+  train_path: data/meld6/spectrograms/train.pkl
+  valid_path: data/meld6/spectrograms/valid.pkl
+  test_path: data/meld6/spectrograms/test.pkl
+  batch_time: 50 
+model:
+  # classes_name: ['joy', 'anger', 'sadness', 'neutral'] # 4 class
+  classes_name: ['joy', 'fear', 'anger', 'disgust', 'surprise', 'sadness', 'neutral'] # 7 class
+  image_size: 
+    - 32
+    - 128

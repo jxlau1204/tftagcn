@@ -1,0 +1,14 @@
+dataset:
+  classes_name: ["N", "A", "H", "S"]
+  train_path: data/meld6/spectrograms/train.pkl
+  valid_path: data/meld6/spectrograms/valid.pkl
+  test_path: data/meld6/spectrograms/test.pkl
+  pretrain_path: data/meld6/iemocap_finetune.mat # size = 512
+  batch_time: 500
+model:
+  # classes_name: ['joy', 'anger', 'sadness', 'neutral'] # 4 class
+  classes_name: ['joy', 'fear', 'anger', 'disgust', 'surprise', 'sadness', 'neutral'] # 7 class
+  # pretrain_size: 512
+  image_size: 
+    - 32
+    - 128
